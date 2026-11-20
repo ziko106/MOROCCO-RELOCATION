@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morocco Relocation & 2030 Property OS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<div class="line"></div>
+<div class="top"><span class="badge">★ MOROCCO EXPAT, NOMAD & 2030 INVESTOR OS</span><button type="button" class="pdf" onclick="window.print()">📥 Save PDF</button></div>
+<h1>Morocco Relocation & 2030 Property OS</h1>
+<p class="lead">Interactive ROI Calculators, Residency & Bank Checklists, Tax Guide, City Cost Comparison & Bilingual Lease Templates.</p>
+<div class="nav">
+<button type="button" class="nb active" id="n-roi" onclick="go('roi')">🏢 1. 2030 Rental ROI</button>
+<button type="button" class="nb" id="n-cost" onclick="go('cost')">💶 2. Living Cost</button>
+<button type="button" class="nb" id="n-visa" onclick="go('visa')">🛂 3. Residency & Bank</button>
+<button type="button" class="nb" id="n-tax" onclick="go('tax')">💼 4. Tax & Company</button>
+<button type="button" class="nb" id="n-buy" onclick="go('buy')">🔑 5. Buying Guide</button>
+<button type="button" class="nb" id="n-lease" onclick="go('lease')">📜 6. Lease Builder</button>
+<button type="button" class="nb" id="n-areas" onclick="go('areas')">📍 7. Top Districts</button>
+<button type="button" class="nb" id="n-checklist" onclick="go('checklist')">✅ 8. Arrival Checklist</button>
+<button type="button" class="nb" id="n-fx" onclick="go('fx')">💱 9. FX & Office Changes</button>
+</div>
+
+<div id="sec-roi" class="sec">
+  <div class="card">
+    <h3>🏢 2030 Property & Airbnb Yield Calculator</h3>
+    <label>Select Target City:</label>
+    <select id="r-city" onchange="calcRoi()">
+      <option value="casa">Casablanca (Maarif / Marina / CFC)</option>
+      <option value="rabat">Rabat (Agdal / Hassan / Hay Riad)</option>
+      <option value="tanger">Tangier (Malabata / Marshan / City Center)</option>
+      <option value="kech">Marrakech (Gueliz / Hivernage / Medina)</option>
+      <option value="agadir">Agadir (Marina / Founty / Taghazout)</option>
+    </select>
+    <label>Property Purchase Price (in USD $):</label>
+    <input type="number" id="r-price" value="140000" oninput="calcRoi()" />
+    <label>Rental Strategy:</label>
+    <select id="r-mode" onchange="calcRoi()">
+      <option value="long">Long-Term Expat Lease (Steady 12-Month Income)</option>
+      <option value="short" selected>Short-Term / Airbnb & 2030 Events (High Yield)</option>
+    </select>
+    <div id="r-out" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<div id="sec-cost" class="sec" style="display:none">
+  <div class="card">
+    <h3>💶 Monthly Expat & Digital Nomad Budget</h3>
+    <label>Choose Lifestyle Tier:</label>
+    <select id="c-tier" onchange="calcCost()">
+      <option value="solo">🎒 Solo Digital Nomad (1-Bed Modern Apt + Coworking)</option>
+      <option value="couple" selected>🥂 Expat Couple (2-Bed Sea/City View + Dining + Car)</option>
+      <option value="family">👨‍👩‍👧‍👦 Family Relocation (3-Bed Villa/Apt + Intl School)</option>
+    </select>
+    <div id="c-out" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<div id="sec-visa" class="sec" style="display:none">
+  <div class="card">
+    <h3>🛂 Carte de Séjour (Residency) & Banking</h3>
+    <p class="sm"><strong>• 90-Day Entry:</strong> US, UK, EU, Canada & GCC citizens enter visa-free for 90 days.</p>
+    <p class="sm"><strong>• Carte de Séjour Requirements:</strong> Lease contract (Bail légalisé), Moroccan bank account proof (Attestation de solde), criminal record check, medical certificate & photos.</p>
+    <p class="sm" style="margin:0"><strong>• Convertible Dirham Account:</strong> Foreigners & MREs must open a <em>Compte en Dirhams Convertibles</em> to freely repatriate funds or rental income abroad.</p>
+  </div>
+</div>
+
+<div id="sec-tax" class="sec" style="display:none">
+  <div class="card">
+    <h3>💼 Moroccan Business & Tax Structures</h3>
+    <div class="row"><span>💻 Auto-Entrepreneur (Services):</span><strong>1% Turnover Tax (Up to 200k MAD/yr)</strong></div>
+    <div class="row"><span>🏢 SARL (Limited Company):</span><strong>20% Corporate Tax (Standard SME)</strong></div>
+    <div class="row" style="border:none"><span>🌐 Casablanca Finance City (CFC):</span><strong>Preferential Tax & FX Status</strong></div>
+    <div class="tip">💡 <strong>183-Day Rule:</strong> Spending 183+ days/year in Morocco makes you a tax resident; check double-taxation treaties (US, France, UK, Canada, Spain, UAE).</div>
+  </div>
+</div>
+
+<div id="sec-buy" class="sec" style="display:none">
+  <div class="card">
+    <h3>🔑 Safe Property Buying Protocol (Notaire)</h3>
+    <p class="sm"><strong>1. Titre Foncier Only:</strong> Never buy untitled land (*Melkia*) as a foreign buyer—insist on a registered <em>Titre Foncier</em> at the ANCFCC.</p>
+    <p class="sm"><strong>2. Closing Costs (~7%–8%):</strong> 4% Registration Duty + 1.5% Land Conservation + ~1% Notaire Fees + VAT.</p>
+    <p class="sm" style="margin:0"><strong>3. Office des Changes Guarantee:</strong> Wire purchase funds from abroad directly to the Notaire's escrow account (*CDG*) to guarantee 100% capital & capital-gains repatriation later.</p>
+  </div>
+</div>
+
+<div id="sec-lease" class="sec" style="display:none">
+  <div class="card">
+    <h3>📜 Instant Bilingual Lease Clause Generator</h3>
+    <label>Tenant Full Name:</label>
+    <input type="text" id="l-name" value="Sarah Jenkins" oninput="genLease()" />
+    <label>Monthly Rent (in MAD):</label>
+    <input type="number" id="l-rent" value="8500" oninput="genLease()" />
+    <div class="fc" id="l-out" style="margin-top:10px;text-align:left"></div>
+  </div>
+</div>
+
+<div id="sec-areas" class="sec" style="display:none">
+  <div class="card">
+    <h3>📍 Best Expat & Investor Neighborhoods</h3>
+    <p class="sm"><strong>• Casablanca:</strong> <em>Maarif, Racine, Gauthier, Casa Marina, Anfa</em> (Business & high rental liquidity).</p>
+    <p class="sm"><strong>• Rabat:</strong> <em>Agdal, Hay Riad, Hassan, Souissi</em> (Diplomatic, ultra-safe, green & quiet).</p>
+    <p class="sm"><strong>• Tangier:</strong> <em>Malabata, Marshan, Iberia</em> (35 min from Spain, booming tech/industrial hub).</p>
+    <p class="sm" style="margin:0"><strong>• Marrakech & Agadir:</strong> <em>Gueliz, Hivernage, Agadir Marina, Taghazout</em> (Top Airbnb & nomad lifestyle).</p>
+  </div>
+</div>
+
+<div id="sec-checklist" class="sec" style="display:none">
+  <div class="card">
+    <h3>✅ First 14 Days Relocation Checklist</h3>
+    <label class="sm"><input type="checkbox" checked> Get Maroc Telecom / Orange SIM + Fiber Internet</label>
+    <label class="sm"><input type="checkbox" checked> Open Convertible MAD Bank Account (Attijariwafa / BMCE / CIH)</label>
+    <label class="sm"><input type="checkbox"> Legalize Residential Lease at Local *Moqataa* (City Hall)</label>
+    <label class="sm"><input type="checkbox"> Submit *Carte de Séjour* File at Police Prefecture</label>
+    <label class="sm"><input type="checkbox"> Register Local Health / International Expat Insurance</label>
+  </div>
+</div>
+
+<div id="sec-fx" class="sec" style="display:none">
+  <div class="card">
+    <h3>💱 Currency & Office des Changes Converter</h3>
+    <label>Enter Amount in USD ($):</label>
+    <input type="number" id="fx-usd" value="1000" oninput="calcFx()" />
+    <div class="cg">
+      <div class="cb"><span>🇲🇦 MAD</span><strong id="fx-mad">10,000 MAD</strong></div>
+      <div class="cb"><span>🇪🇺 EUR</span><strong id="fx-eur">€920</strong></div>
+      <div class="cb"><span>🇬🇧 GBP</span><strong id="fx-gbp">£780</strong></div>
+    </div>
+    <div class="tip">🏦 <strong>MRE & Expat Rule:</strong> Declare foreign currency cash above <strong>100,000 MAD</strong> at customs upon arrival if you plan to deposit it into a convertible account.</div>
+  </div>
+</div>
+
+<div class="line" style="margin-top:14px;margin-bottom:0"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
